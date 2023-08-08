@@ -1,0 +1,20 @@
+import pandas as pd
+all_list =['视频标题','视频地址','作者','综合得分','播放数','弹幕数','投币数','点赞数','点踩数','分享数','收藏数']
+all_dic = {}
+Total_station = pd.read_csv("B站TOP100-全站.csv")
+animal = pd.read_csv("B站TOP100-动物圈.csv")
+animation = pd.read_csv("B站TOP100-动画.csv")
+original = pd.read_csv("B站TOP100-原创.csv")
+entertainment = pd.read_csv("B站TOP100-娱乐.csv")
+film_television = pd.read_csv("B站TOP100-影视.csv")
+life = pd.read_csv("B站TOP100-生活.csv")
+all_dic["全站"] = sum(Total_station["播放数"])
+all_dic["动物圈"] = sum(animal["播放数"])
+all_dic["动画"] = sum(animation["播放数"])
+all_dic["原创"] = sum(original["播放数"])
+all_dic["娱乐"] = sum(entertainment["播放数"])
+all_dic["影视"] = sum(film_television["播放数"])
+all_dic["生活"] = sum(life["播放数"])
+# all_dic["全站"] = sum(Total_station["播放数"])
+print(all_dic)
+# print(Total_station["播放数"])
